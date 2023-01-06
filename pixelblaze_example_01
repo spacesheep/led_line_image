@@ -1,0 +1,26 @@
+// _v contains the intensity of the pixels for the entire strip
+export var _v = array(pixelCount);
+// _freq is the refresh frequency between each frames
+export var _freq = 0.05;
+// _h is the hue value (basically the color) set for all LEDs in the strip
+export var _h = 0.05;
+
+
+for (i = 0; i < pixelCount; i++) {
+  _v[i] = 0
+  if (i == 30){
+    _v[i]= 1
+  }
+
+}
+
+export function beforeRender(delta) {
+  t1 = time(_freq)
+}
+
+export function render(index) {
+  h = _h
+  s = 1
+  v = _v[index]
+  hsv(h, s, v)
+}
